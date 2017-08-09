@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CounterHero extends Model
 {
-    public $fillable = ['name','icon'];
+    protected $fillable = ['name','icon'];
     
     public function counters()
     {
