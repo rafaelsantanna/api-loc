@@ -12,8 +12,5 @@ class Hero extends Model
     {
         return $this->hasMany('App\Counter');
     }
-    public function positions()
-    {
-        return $this->hasMany('App\Position');
-    }
+
 }
