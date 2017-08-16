@@ -1,1 +1,3 @@
-Foi criado o retorno da api para os Herois, agora falta acabar todo o crud e sincronizar este projeto com o do github.
+# Checklist
+
+Terminar todos os Controllers
