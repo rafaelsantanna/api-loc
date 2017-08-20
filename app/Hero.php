@@ -10,7 +10,7 @@ class Hero extends Model
     
     public function counters()
     {
-        return $this->hasMany('App\Counter');
+        return $this->belongsTo('App\Counter');
     }
 
 }

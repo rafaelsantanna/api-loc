@@ -8,4 +8,9 @@ class Position extends Model
 {
     protected $fillable = ['name'];
     
+    
+    public function counters()
+    {
+        return $this->belongsTo('App\Counter');
+    }
 }

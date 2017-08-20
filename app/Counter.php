@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Counter extends Model
 {
-    protected $fillable = ['counter','heroes_id','positions_id','contersheroes_id'];
+    protected $fillable = ['counter','heroes_id','positions_id','countersheroes_id'];
     
     public function heroes()
     {
