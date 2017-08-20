@@ -28,3 +28,5 @@ Route::group(array('prefix' => 'api'), function()
 Route::get('/', function () {
     return redirect('api');
 });
+
+Route::get('/api/counters/listCounters/heroes_id/{heroes_id}/positions_id/{positions_id}', 'CountersController@listCounters');

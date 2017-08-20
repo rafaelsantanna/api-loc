@@ -66,4 +66,18 @@ class CountersController extends Controller
         
         $counter->delete();
     }
+    
+    //Função que retorna a lista de Counters do Herói selecionado
+    public function listCounters($heroes_id,$positions_id)
+    {
+        $counter = Counter::where('heroes_id', $heroes_id)->where('positions_id',$positions_id)->get();
+        
+        if(!$counter){
+            return response()->json([
+                'message' => 'Record not found',
+                ], 404);
+        }
+        
+        return response()->json($counter);
+    }
 }
