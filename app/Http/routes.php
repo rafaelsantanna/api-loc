@@ -29,4 +29,5 @@ Route::get('/', function () {
     return redirect('api');
 });
 
+//Rota que recebe o get com o ID do heroi e da posição
 Route::get('/api/counters/listCounters/heroes_id/{heroes_id}/positions_id/{positions_id}', 'CountersController@listCounters');
