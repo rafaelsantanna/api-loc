@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Counter;
 
+use DB;
+
 class CountersController extends Controller
 {
     public function index()
@@ -70,7 +72,10 @@ class CountersController extends Controller
     //Função que retorna a lista de Counters do Herói selecionado
     public function listCounters($heroes_id,$positions_id)
     {
-        $counter = Counter::where('heroes_id', $heroes_id)->where('positions_id',$positions_id)->get();
+        // Faz Join de Counters e CountersHeroes , Compara a FK de Counters com o ID de CountersHeroes e
+        // seleciona o nome e o counter dos IDs passados pelo parametro
+        $counter = DB::table('counters')->join('countersheroes','counters.countersheroes_id', '=','countersheroes.id')
+        ->select('counters.counter','countersheroes.name')->where('heroes_id',$heroes_id)->where('positions_id',$positions_id)->get();
         
         if(!$counter){
             return response()->json([
