@@ -74,8 +74,11 @@ class CountersController extends Controller
     {
         // Faz Join de Counters e CountersHeroes , Compara a FK de Counters com o ID de CountersHeroes e
         // seleciona o nome e o counter dos IDs passados pelo parametro
-        $counter = DB::table('counters')->join('countersheroes','counters.countersheroes_id', '=','countersheroes.id')
-        ->select('counters.counter','countersheroes.name')->where('heroes_id',$heroes_id)->where('positions_id',$positions_id)->get();
+        $counter = DB::table('counters')
+        ->join('countersheroes','counters.countersheroes_id', '=','countersheroes.id')
+        ->select('counters.counter','countersheroes.name')
+        ->where('heroes_id',$heroes_id)
+        ->where('positions_id',$positions_id)->get();
         
         if(!$counter){
             return response()->json([
