@@ -76,7 +76,7 @@ class CountersController extends Controller
         // seleciona o nome e o counter dos IDs passados pelo parametro
         $counter = DB::table('counters')
         ->join('countersheroes','counters.countersheroes_id', '=','countersheroes.id')
-        ->select('counters.counter','countersheroes.name')
+        ->select('counters.id','counters.counter','countersheroes.name')
         ->where('heroes_id',$heroes_id)
         ->where('positions_id',$positions_id)->get();
         
