@@ -23,7 +23,7 @@ class HeroesController extends Controller
         if(!$hero){
             return response()->json([
                 'message' => 'Record not found',
-                ], 404);
+            ], 404);
         }
         
         return response()->json($hero);
@@ -46,12 +46,12 @@ class HeroesController extends Controller
             return response()->json([
                 'message' => 'Record not found',
             ], 404);
-            
-        $hero->fill($request->all());
+        }
+
+        $hero->update($request->all());
         $hero->save();
         
         return response()->json($hero);
-        }
     }
     
     public function destroy($id)

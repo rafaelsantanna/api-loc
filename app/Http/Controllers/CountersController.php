@@ -48,12 +48,12 @@ class CountersController extends Controller
             return response()->json([
                 'message' => 'Record not found',
             ], 404);
-            
-        $counter->fill($request->all());
-        $counter->save();
-        
-        return response()->json($counter);
         }
+
+        $counter->update($request->all());
+        $counter->save();
+
+        return response()->json($counter);
     }
     
     public function destroy($id)

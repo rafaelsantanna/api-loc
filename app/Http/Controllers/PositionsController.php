@@ -45,13 +45,13 @@ class PositionsController extends Controller
         if(!$position) {
             return response()->json([
                 'message' => 'Record not found',
-            ], 404);
-            
-        $position->fill($request->all());
+            ], 404);    
+        }
+
+        $position->update($request->all());
         $position->save();
         
         return response()->json($position);
-        }
     }
     
     public function destroy($id)
